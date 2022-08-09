@@ -1,0 +1,51 @@
+.player-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.song-cover{
+
+    margin-bottom: 1%;
+
+}
+.song-cover img{
+    background-position: center;
+    background-size: contain;
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+}
+.song-details{
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.controller{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1%;
+    width: 100%;
+}
+.controller-controls{
+    width: 25%;
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.controller-slider{
+    width: 80%;
+    height: 10px;
+}
+.controller-controls img{
+    height: 50px;
+}
+.reverse{
+    transform: rotate(180deg);
+}
