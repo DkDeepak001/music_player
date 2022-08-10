@@ -6,6 +6,8 @@
     align-items: center;
     justify-content: center;
 }
+
+  
 .song-cover{
 
     margin-bottom: 1%;
@@ -40,12 +42,48 @@
     align-items: center;
 }
 .controller-slider{
-    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 45%;
     height: 10px;
 }
+.slider{
+    width: 100%;
+    cursor: pointer;
+    background: black;
+
+}
+.slider {
+    width: 400px;
+    height: 15px;
+    -webkit-appearance: none;
+    background: rgb(139, 139, 139);
+    outline: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgb(147, 147, 147);
+  }
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    border: 4px solid rgb(249, 64, 51);
+    box-shadow: -407px 0 0 400px hsl(0, 0%, 0%);
+  }
+  
+
 .controller-controls img{
     height: 50px;
 }
 .reverse{
     transform: rotate(180deg);
+}
+.controller-controls button{
+    border: none;
+    background-color: white;
 }

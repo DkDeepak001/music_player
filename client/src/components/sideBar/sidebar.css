@@ -2,13 +2,13 @@
     background-color: rgb(234, 234, 234);
     width: 20%;
     height: 100vh;
+    overflow: auto;
 }
 .local-list{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    overflow-y: auto;
 }
 .sidebar-song-container{
     width: 90%;
