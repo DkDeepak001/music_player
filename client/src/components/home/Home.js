@@ -4,7 +4,7 @@ import Player from './player/Player';
 
 function Home() {
   return (
-    <div className='home-container'><Player /></div>
+    <div className='home-container'><Player  /></div>
   )
 }
 
