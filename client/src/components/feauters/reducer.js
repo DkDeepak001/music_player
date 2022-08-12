@@ -6,7 +6,8 @@ export const musicSlice = createSlice({
         id: 1,
         name: "Bad Guy",
         author: "Billie Eilish",
-        path: "/static/media/Billie_Eilish_-_Bad_Guy.25213d87437fab9c5bca.mp3"
+        path: "/static/media/Billie_Eilish_-_Bad_Guy.25213d87437fab9c5bca.mp3",
+        link:"https://www.rollingstone.com/wp-content/uploads/2020/01/BillyEilish.jpg"
     }},
     reducers:{ 
         changeSong : (state,action)=>{ 

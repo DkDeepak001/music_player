@@ -1,11 +1,13 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect,useRef } from 'react';
 import './sidebar.css';
 import playIcon from '../images/icons/play-button.png';
 import dataJSON from '../home/player/dataSong';
 import {useDispatch } from "react-redux";
 import {changeSong} from '../feauters/reducer'
+import gsap from 'gsap';
 
 function Sidebar(props) {
+  const sideBarContainer = useRef(null)
   const dispatch = useDispatch();
   const [data ,setData] = useState();
 
@@ -17,21 +19,24 @@ function Sidebar(props) {
   useEffect(() => {
     if(props.songID){
       const id = (props.songID - 1)
-      console.log(id)
       dispatch(changeSong(dataJSON[id]));
     }
   },[props.songID])
+  useEffect(() => {
+    // gsap.fromTo(sideBarContainer.current.children,{opacity:0,y:-25,scale:.9},{scale:1,opacity:1,y:0,duration:.5,stagger:.1})
+  }, [])
+  
 
   
 
   return (
     <div className='sidebar-container'>
-      <div className='local-list'>
+      <div className='local-list' ref={sideBarContainer}>
             {data? data.map((d, index) => 
             <>
               <div className='sidebar-song-container' onClick={() => dispatch(changeSong(dataJSON[index]))} >
                 <div className='sidebar-song-img'>
-                  <img src="https://yt3.ggpht.com/ytc/AMLnZu9-LgELbaGCR96t3I8DaYUOi2YPzwPcTkfooMWb3Q=s900-c-k-c0x00ffffff-no-rj"></img>
+                  <img src={d.link}></img>
                 </div>
                 <div className='sidebar-song-detail'> 
                   <h3 className='sidebar-song-name'>{ d.name }</h3>
