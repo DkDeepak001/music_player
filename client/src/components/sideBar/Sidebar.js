@@ -11,11 +11,16 @@ function Sidebar(props) {
 
   useEffect(() => {
     setData(dataJSON);
+    
   })
   
   useEffect(() => {
-    dispatch(changeSong(dataJSON[0]));
-  },[])
+    if(props.songID){
+      const id = (props.songID - 1)
+      console.log(id)
+      dispatch(changeSong(dataJSON[id]));
+    }
+  },[props.songID])
 
   
 

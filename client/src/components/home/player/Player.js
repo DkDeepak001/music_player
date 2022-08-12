@@ -9,6 +9,7 @@ import {useSelector} from 'react-redux'
 
 function Player() {
     const songDetail = useSelector((state) => state.music.value);
+    const [songId,setSogId] = useState(0);
     const [audio, setAudio] = useState(new Audio(songDetail.path));
     const [playing, setPlaying] = useState(false);
     const [time, setTime] = useState(Date.now());
@@ -20,6 +21,7 @@ function Player() {
 
     useEffect(() => {
       setAudio(new Audio(songDetail.path));
+      setSogId(songDetail.id)
       audio.pause();
       setPlaying(false);
     },[songDetail])
@@ -70,15 +72,19 @@ function Player() {
         audio.currentTime = val;
       }
       const playNext =() => {
-        console.log("next");
+        if(songId <= 8 && songId >= 0){ 
+          setSogId(songId + 1 );
+        }
       }
       const playPrev =() => {
-        console.log("prev");
+       if(songId <= 9 && songId > 0 ){
+        setSogId(songId - 1 );
+       }
       }
 
       return (
         <div className='main-container-splitup'>
-        <Sidebar />
+        <Sidebar songID={songId}/>
         <div className='player-container'>
         <div className='song-cover'>
             <img className='song-cover-img' src="https://www.rollingstone.com/wp-content/uploads/2020/01/BillyEilish.jpg"/>
